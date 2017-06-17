@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Time</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+      <p>
+        Click me, I count: <button v-on:click="counter += 1">{{counter}}</button>
+      </p>
+      <random-num></random-num>
+      <h3>Message center:</h3>
+      <input @keyup.enter="submit" placeholder="enter new message">
+      <h4>"{{message}}"</h4>
+
+      <section id="messageHist"  v-show="hasHistory">
+        <small>
+          <p>Message History:</p>
+          <ul>
+            <li v-for="item in messageHistory">
+              {{item}}
+            </li>
+          </ul>
+        </small>
+      </section> <!-- end messageHist -->
+     
+    </div> <!-- end app -->
+
+    <script src="bower_components/vue/dist/vue.min.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
