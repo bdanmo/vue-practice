@@ -49,3 +49,5 @@ vm.$watch("message", (newVal, oldVal) => {
   vm.hasHistory = true;
 });
 */
+
+//nice
