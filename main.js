@@ -1,15 +1,16 @@
 //var greeter = new Vue
 
 Vue.component('random-num', {
-  template: `<button @click="injectRandomNum">{{number}}</button>`,
-  data: function() {
+  template: 
+  `<button @click="injectRandomNum">{{number}}</button>`,
+  data: () => {
     return {
       number: "Get Random!"
       //you could add more key/value pairs here
     }
   },
   methods: {
-    injectRandomNum: function () {
+    injectRandomNum: () => {
       var n = Math.floor(Math.random() * 69 + 1);
       this.number = n;
     }
@@ -26,14 +27,14 @@ const vm = new Vue({
     hasHistory: false
   },
   methods: {
-    submit: function (event) {
+    submit: event => {
       var input = event.target;
       vm.message = input.value;
       input.value = "";
     }
   },
   watch: {
-    "message": function (newVal, oldVal) {
+    "message": (newVal, oldVal) => {
       //update a change-log list
       vm.messageHistory.unshift(oldVal);
       if (vm.messageHistory.length > 3) vm.messageHistory.pop();
